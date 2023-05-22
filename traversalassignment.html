@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #boxes{
+            margin: 2rem auto;
+            width: 80%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .box{
+            width: 22%;
+            margin: 1%;
+            border: 2px solid;
+            padding: 0.5rem;
+            text-align: center;
+            border-radius: .5rem;
+        }
+        .box a {
+            display: none;
+            text-decoration: none;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="boxes">
+            <div class="box">
+                <h2>box 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum iste numquam, ipsa culpa rerum nisi veniam deleniti. Odit minus provident, natus, dolorem similique quo dolorum beatae deleniti odio soluta et.</p>
+                <a href="">show box</a>
+            </div>
+            <div class="box">
+                <h2>box 2</h2>
+                <p>Et ipsam dicta dolorem, consectetur id nihil mollitia pariatur reprehenderit est vel natus, deserunt consequuntur laborum officiis voluptates, hic ex dolores exercitationem repudiandae corrupti quisquam eos ducimus rerum tenetur! Repudiandae.</p>
+                <a href="">show box</a>
+            </div>
+            <div class="box">
+                <h2>box 3</h2>
+                <p>Commodi, quibusdam labore rerum neque tempora modi! Itaque, natus. Reiciendis, magnam facilis? Laboriosam id ut delectus porro, possimus, eaque repellendus ipsum ipsa officiis accusantium voluptatem maxime a repudiandae nisi inventore?</p>
+                <a href="">show box</a>
+            </div>
+            <div class="box">
+                <h2>box 4</h2>
+                <p>Tempora, nam iusto? At nostrum maiores corporis ipsa accusamus eligendi quia rem deserunt voluptatem laudantium beatae vero perferendis non quam deleniti, adipisci saepe quis totam dolor facere consequatur provident? Similique.</p>
+                <a href="">show box</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        const heading = document.querySelectorAll("h2")
+        for(let i = 0 ; i<=heading.length ; i++){
+            heading[i].addEventListener("click", function(){
+                    heading[i].style.display="none"
+                    heading[i].nextElementSibling.style.display="none"
+                    // document.querySelector("p").style.display="none"
+
+                    const anchor = document.querySelectorAll("a")
+                    for(i=0 ; i<=anchor.length;i++){
+                        anchor[i].style.display="block"
+                        event.preventDefault();
+                    }
+            })
+        }
+    </script>
+</body>
+</html>
