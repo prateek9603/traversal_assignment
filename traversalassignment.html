@@ -68,19 +68,27 @@
 
     <script>
         const heading = document.querySelectorAll("h2")
-        for(let i = 0 ; i<=heading.length ; i++){
+        const anchor = document.querySelectorAll("a")
+        for(let i = 0 ; i<heading.length ; i++){
             heading[i].addEventListener("click", function(){
-                    heading[i].style.display="none"
-                    heading[i].nextElementSibling.style.display="none"
-                    // document.querySelector("p").style.display="none"
-
-                    const anchor = document.querySelectorAll("a")
-                    for(i=0 ; i<=anchor.length;i++){
-                        anchor[i].style.display="block"
-                        event.preventDefault();
-                    }
+                heading[i].style.display="none"
+                heading[i].nextElementSibling.style.display="none"
+                
+                heading[i].nextElementSibling.nextElementSibling.style.display="block"
             })
+            anchor[i].addEventListener("click", function(){
+                    event.preventDefault();
+                    anchor[i].previousElementSibling.previousElementSibling.style.display="block"
+                    anchor[i].previousElementSibling.style.display="block"
+                    anchor[i].style.display="none"
+                })
+            
+            
+            
         }
+        //     for(let i=0 ; i<=anchor.length ; i++){
+            // }
+
     </script>
 </body>
 </html>
